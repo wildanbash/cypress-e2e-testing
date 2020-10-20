@@ -37,6 +37,14 @@ describe(' first test suite', () => {
         cy.get('textarea[placeholder="Message"]').type('Tugas - TI3A - Cypress E2E Testing')
         cy.get('[status="success"][type="submit"]')
         cy.contains('Send')
-    })
+    });
+
+    it('block form test suite',()=>{
+        cy.get('#inputFirstName').type('Wildan Dawam ')
+        cy.get('#inputLastName').type('Bash')
+        cy.get('#inputEmail').type('wildandawambash@gmail.com')
+        cy.get('[status="primary"][type="submit"]')
+        cy.contains('Submit')
+    });
 
 });
