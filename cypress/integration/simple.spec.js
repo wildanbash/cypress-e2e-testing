@@ -47,4 +47,11 @@ describe(' first test suite', () => {
         cy.contains('Submit')
     });
 
+    it('horizontal form test suite', () => {
+        cy.get('#inputEmail3').type('wildandawambash@gmail.com')
+        cy.get('#inputPassword3').type('12052000')
+        cy.get('.custom-checkbox').last().click()
+        cy.get('[status="warning"][type="submit"]')
+        cy.contains('Sign in')
+    });
 });
