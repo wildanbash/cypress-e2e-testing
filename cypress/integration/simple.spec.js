@@ -23,13 +23,20 @@ describe(' first test suite', () => {
         cy.contains('Sign in')
     });
 
-
     it('basic form test suite',()=> {
         cy.get('#exampleInputEmail1').type('wildandawambash@gmail.com')
         cy.get('#exampleInputPassword1').type('12052000')
         cy.get('.text').contains('Check me out').click()
         cy.get('[status="danger"][type="submit"]')
         cy.contains('Submit')
+    });
+
+    it('form without labels test suite',()=>{
+        cy.get('[placeholder="Recipients"]').type('Wildan Dawam Bash')
+        cy.get('[placeholder="Subject"]').type('Cypress Testing')
+        cy.get('textarea[placeholder="Message"]').type('Tugas - TI3A - Cypress E2E Testing')
+        cy.get('[status="success"][type="submit"]')
+        cy.contains('Send')
     })
 
 });
