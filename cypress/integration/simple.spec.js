@@ -23,5 +23,13 @@ describe(' first test suite', () => {
         cy.contains('Sign in')
     });
 
-    
+
+    it('basic form test suite',()=> {
+        cy.get('#exampleInputEmail1').type('wildandawambash@gmail.com')
+        cy.get('#exampleInputPassword1').type('12052000')
+        cy.get('.text').contains('Check me out').click()
+        cy.get('[status="danger"][type="submit"]')
+        cy.contains('Submit')
+    })
+
 });
